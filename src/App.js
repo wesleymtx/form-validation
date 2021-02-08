@@ -6,12 +6,8 @@ import FormValidated from './components/form'
 import "./App.css"
 import { date } from "yup/lib/locale"
 
-const handleSubmit = values => {
-    let inputs= document.getElementsByTagName('input')
-    for(let i=0; i<inputs.length-1; i++)
-        inputs[i].value=" "
-    return  alert(JSON.stringify(values))
-}
+const handleSubmit = values => alert(JSON.stringify(values))
+
 const initialValues = {
     name:"",
     address:"",
