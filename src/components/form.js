@@ -5,35 +5,33 @@ import React from 'react'
 import {UserSchema} from '../validations/userValidations'
 import { ErrorMessage, Formik, Form, Field } from 'formik'
 
-import './form.css'
-
 const FormValidated = ({ handleSubmit, initialValues, errors }) => (
 
     <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={UserSchema}>
         <Form className="bg-light p-3">
-            <h1 class="h3 mb-3 fw-normal text-center">Cadastre-se</h1>
-            <label class="form-label mt-2">*Nome:</label>
+            <h1 className="h3 mb-3 fw-normal text-center">Cadastre-se</h1>
+            <label className="form-label mt-2">*Nome:</label>
             <div className="Form-Group">
                 <Field className="form-control" name="name" placeholder="Nome" type="text"/>
                 <ErrorMessage className="mb-3 text-danger" component="span" name="name"/>
             </div>
-            <label class="form-label mt-2">Endereço:</label>
+            <label class="form-label mt-2">*Endereço:</label>
             <div className="Form-Group">
                 <Field className="form-control" name="address" placeholder="Endereço" type="text"/>
                 <ErrorMessage className="mb-3 text-danger" component="span" name="address"/>
             </div>
-            <label class="form-label mt-2">Telefone:</label>
+            <label class="form-label mt-2">*Telefone (sem traço, parênteses ou espaço):</label>
             <div className="Form-Group">
-                <Field className="form-control" name="phone" placeholder="phone" type="text"/>
+                <Field className="form-control" name="phone" placeholder="11950313436" type="text"/>
                 <ErrorMessage className="mb-3 text-danger" component="span" name="phone"/>
             </div>
-            <label class="form-label mt-2">Email:</label>
+            <label class="form-label mt-2">*Email:</label>
             <div className="Form-Group">
                 <Field className="form-control" name="email" placeholder="email" type="email"/>
                 <ErrorMessage className="mb-3 text-danger" component="span" name="email"/>
             </div>
 
-            <label class="form-label mt-2">Data de nascimento:</label>
+            <label class="form-label mt-2">*Data de nascimento:</label>
             <div className="Form-Group">
                 <Field className="form-control" name="date" placeholder="date" type="date"/>
                 <ErrorMessage className="mb-3 text-danger" component="span" name="date"/>
