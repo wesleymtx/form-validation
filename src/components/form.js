@@ -2,44 +2,49 @@
 import * as yup from 'yup'
 import PropTypes from 'prop-types'
 import React from 'react'
-import {userSchema} from '../validations/userValidations'
+import {UserSchema} from '../validations/userValidations'
 import { ErrorMessage, Formik, Form, Field } from 'formik'
 
 import './form.css'
 
 const FormValidated = ({ handleSubmit, initialValues, errors }) => (
-    <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={userSchema}>
-        <Form className="Form">
-            <label>Nome:</label>
+
+    <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={UserSchema}>
+        <Form className="bg-light p-3">
+            <h1 class="h3 mb-3 fw-normal text-center">Cadastre-se</h1>
+            <label class="form-label mt-2">*Nome:</label>
             <div className="Form-Group">
-                <Field className="Form-Field" name="name" placeholder="Nome" type="text"/>
-                <ErrorMessage className="Form-Error" component="span" name="name"/>
+                <Field className="form-control" name="name" placeholder="Nome" type="text"/>
+                <ErrorMessage className="mb-3 text-danger" component="span" name="name"/>
             </div>
-            <label>Endereço:</label>
+            <label class="form-label mt-2">Endereço:</label>
             <div className="Form-Group">
-                <Field className="Form-Field" name="address" placeholder="Endereço" type="text"/>
-                <ErrorMessage className="Form-Error" component="span" name="address"/>
+                <Field className="form-control" name="address" placeholder="Endereço" type="text"/>
+                <ErrorMessage className="mb-3 text-danger" component="span" name="address"/>
             </div>
-            <label>Telefone:</label>
+            <label class="form-label mt-2">Telefone:</label>
             <div className="Form-Group">
-                <Field className="Form-Field" name="phone" placeholder="phone" type="text"/>
-                <ErrorMessage className="Form-Error" component="span" name="phone"/>
+                <Field className="form-control" name="phone" placeholder="phone" type="text"/>
+                <ErrorMessage className="mb-3 text-danger" component="span" name="phone"/>
             </div>
-            <label>Email:</label>
+            <label class="form-label mt-2">Email:</label>
             <div className="Form-Group">
-                <Field className="Form-Field" name="email" placeholder="email" type="email"/>
-                <ErrorMessage className="Form-Error" component="span" name="email"/>
+                <Field className="form-control" name="email" placeholder="email" type="email"/>
+                <ErrorMessage className="mb-3 text-danger" component="span" name="email"/>
             </div>
 
-            <label>Data de nascimento:</label>
+            <label class="form-label mt-2">Data de nascimento:</label>
             <div className="Form-Group">
-                <Field className="Form-Field" name="date" placeholder="date" type="date"/>
-                <ErrorMessage className="Form-Error" component="span" name="date"/>
+                <Field className="form-control" name="date" placeholder="date" type="date"/>
+                <ErrorMessage className="mb-3 text-danger" component="span" name="date"/>
             </div>
-            <input type="submit" className="Form-Btn" />
+            <input type="submit" className="w-100 btn btn-lg btn-primary mt-4" />
             
         </Form>
     </Formik>
+
+
+    
 )
 
 Form.propTypes = {

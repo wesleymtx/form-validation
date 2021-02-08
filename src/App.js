@@ -1,7 +1,7 @@
 
 import React from "react"
 
-import Form from './components/form'
+import FormValidated from './components/form'
 
 import "./App.css"
 
@@ -10,7 +10,7 @@ const initialValues = {}
 
 const App = () => (
     <div className="App">
-        <Form handleSubmit={handleSubmit} initialValues={initialValues}/>
+        <FormValidated handleSubmit={handleSubmit} initialValues={initialValues}/>
     </div>
 )
 
