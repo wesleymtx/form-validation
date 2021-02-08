@@ -5,7 +5,7 @@ import React from 'react'
 import {UserSchema} from '../validations/userValidations'
 import { ErrorMessage, Formik, Form, Field } from 'formik'
 
-const FormValidated = ({ handleSubmit, initialValues, errors }) => (
+const FormValidated = ({ handleSubmit, initialValues }) => (
 
     <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={UserSchema}>
         <Form className="bg-light p-3">
@@ -15,23 +15,23 @@ const FormValidated = ({ handleSubmit, initialValues, errors }) => (
                 <Field className="form-control" name="name" placeholder="Nome" type="text"/>
                 <ErrorMessage className="mb-3 text-danger" component="span" name="name"/>
             </div>
-            <label class="form-label mt-2">*Endereço:</label>
+            <label className="form-label mt-2">*Endereço:</label>
             <div className="Form-Group">
                 <Field className="form-control" name="address" placeholder="Endereço" type="text"/>
                 <ErrorMessage className="mb-3 text-danger" component="span" name="address"/>
             </div>
-            <label class="form-label mt-2">*Telefone (sem traço, parênteses ou espaço):</label>
+            <label className="form-label mt-2">*Telefone (sem traço, parênteses ou espaço):</label>
             <div className="Form-Group">
-                <Field className="form-control" name="phone" placeholder="11950313436" type="text"/>
+                <Field className="form-control" name="phone" placeholder="11950313447" type="text"/>
                 <ErrorMessage className="mb-3 text-danger" component="span" name="phone"/>
             </div>
-            <label class="form-label mt-2">*Email:</label>
+            <label className="form-label mt-2">*Email:</label>
             <div className="Form-Group">
                 <Field className="form-control" name="email" placeholder="email" type="email"/>
                 <ErrorMessage className="mb-3 text-danger" component="span" name="email"/>
             </div>
 
-            <label class="form-label mt-2">*Data de nascimento:</label>
+            <label className="form-label mt-2">*Data de nascimento:</label>
             <div className="Form-Group">
                 <Field className="form-control" name="date" placeholder="date" type="date"/>
                 <ErrorMessage className="mb-3 text-danger" component="span" name="date"/>
@@ -45,10 +45,6 @@ const FormValidated = ({ handleSubmit, initialValues, errors }) => (
     
 )
 
-Form.propTypes = {
-    handleSubmit: PropTypes.func.isRequired,
-    initialValues: PropTypes.object.isRequired
-}
 
 export default FormValidated;
 
